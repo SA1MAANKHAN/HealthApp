@@ -1,0 +1,50 @@
+.about{
+    // height: 100vh;
+    width: 100vw;
+    padding: calc(1vh + 1vw) 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    .diseaseDetector,  .covidTracker{
+        width: 50vw;
+        margin: 0 auto;
+        h1{
+            color: white;
+            font-size: calc(2vh + 2vw);
+        }
+        h3{
+            color: white;
+            font-size: calc(1vh + 1vw);
+        }
+    }
+
+        .madeBy{
+        width: 50vw;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        h1{
+            color: white;
+            font-size: calc(2vh + 2vw);
+            text-align: right;
+        }
+        .studentName{
+
+            h2{
+                color: white;
+                            text-align: right;
+                             font-size: calc(1.2vh + 1.2vw);
+
+            }
+            h3{
+                color: white;
+                            text-align: right;
+                             font-size: calc(1vh + 1vw);
+            }
+        }
+    }
+
+}
