@@ -162,7 +162,7 @@ function DiseasePrediction() {
       setTimeout(() => {}, 5000);
       const res = await axios({
         method: "POST",
-        url: "https://flask-server-disease.herokuapp.com/result",
+        url: "https://diseasedetecter.herokuapp.com/result",
         data: {
           sym1: `${symptom1}`,
           sym2: `${symptom2}`,

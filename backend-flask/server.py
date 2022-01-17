@@ -7,9 +7,10 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route("/")
+
 @app.route("/home")
 def home():
-    return "HELLO WORLD"
+    return "DISEASE PREDICTOR"
 
 @app.route("/result", methods=["POST"])
 def result():
@@ -54,7 +55,9 @@ def result():
         l2.append(0)
 
     # TESTING DATA
-    tr = pd.read_csv("Testing.csv")
+    # tr = pd.read_csv("./Testing.csv")
+    tr = pd.read_csv("/Users/salmaankhan/Documents/Github/HealthApp/backend-flask/Testing.csv")
+
     tr.replace({'prognosis': {'Fungal infection': 0, 'Allergy': 1, 'GERD': 2, 'Chronic cholestasis': 3, 'Drug Reaction': 4,
                               'Peptic ulcer diseae': 5, 'AIDS': 6, 'Diabetes ': 7, 'Gastroenteritis': 8, 'Bronchial Asthma': 9, 'Hypertension ': 10,
                               'Migraine': 11, 'Cervical spondylosis': 12,
@@ -69,8 +72,10 @@ def result():
     y_test = tr[["prognosis"]]
     np.ravel(y_test)
 
+
     # TRAINING DATA
-    df = pd.read_csv("Training.csv")
+    # df = pd.read_csv("./Training.csv")
+    df = pd.read_csv("/Users/salmaankhan/Documents/Github/HealthApp/backend-flask/Training.csv")
 
     df.replace({'prognosis': {'Fungal infection': 0, 'Allergy': 1, 'GERD': 2, 'Chronic cholestasis': 3, 'Drug Reaction': 4,
                               'Peptic ulcer diseae': 5, 'AIDS': 6, 'Diabetes ': 7, 'Gastroenteritis': 8, 'Bronchial Asthma': 9, 'Hypertension ': 10,
@@ -121,5 +126,9 @@ def result():
     return NaiveBayes(symp1, symp2, symp3, symp4, symp5)
 
 
-if __name__ == "__main__":
-    app.run
+# if __name__ == "__main__":
+#     app.run
+
+if __name__ == '__main__':
+    port = 8000 #the custom port you want
+    app.run(host='0.0.0.0', port=port)

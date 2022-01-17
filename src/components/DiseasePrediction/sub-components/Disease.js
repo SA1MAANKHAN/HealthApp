@@ -42,10 +42,10 @@ const useStyles = makeStyles({
     fontWeight:"800",
     color: "white",
     border: "none",
-    width: "calc(10vh + 10vw)",
     height: "calc(2.5vh + 2.5vw)",
     borderRadius: "0.6rem",
     marginRight: "3rem",
+    padding:"calc(.5vh + .5vw) calc(1vh + 1vw)",
      backgroundColor:"#30dd8a",
      transition:"transform .2s ease",
     "&:hover": {
@@ -152,7 +152,7 @@ const Disease = (disease) => {
             </div>
           </div>
           <center>
-            <button className={classes.btn} onClick={Search}>
+            <button className={classes.btn} onClick={Search} >
               Search Another Disease
             </button>
           </center>
